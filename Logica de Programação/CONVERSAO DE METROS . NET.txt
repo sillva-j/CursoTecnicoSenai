@@ -1,0 +1,38 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Digite a distância em metros: ");
+		string texto = Console.ReadLine();
+		double dist = double.Parse(texto);
+		
+		Console.Write("\nQual consversão deseja: (cm , km , mi): ");
+		string opera = Console.ReadLine().ToLower();
+		double resultado;
+		
+		switch ( opera )
+		{
+			case "cm":
+				resultado = dist * 100;
+				Console.Write("\nSua escolha: cm");
+				Console.Write("\nResultado de sua conversão: {0} cm", resultado);
+				break;
+				
+			case "km": 
+				resultado = dist / 1000;
+				Console.Write("\nSua escolha: km");
+				Console.Write("\nResultado de sua conversão: {0} km", resultado);
+				break;
+			
+			case "mi":
+				resultado = dist / 1609;
+				Console.Write("\nSua escolha: mi");
+				Console.Write("\nResultado de sua conversão: {0} ml", resultado);
+				break;
+			
+		}
+				
+	}
+}

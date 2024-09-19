@@ -1,0 +1,71 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Random random = new Random();
+		int[] nume = null;
+		string cadeia = "";
+		string todos = "";
+		bool erro = false;
+		int quantd = 0;
+	    double premio = 0;
+		
+		Console.Write("Digite o valor do prêmio: ");
+		do{
+		if (!double.TryParse(Console.ReadLine(), out premio))
+		{
+			Console.Write("Erro! Número invalido, Digite outro valor: ");
+		
+		}else{	
+			erro = true;
+		}
+		}while(!erro);
+		erro = false;
+		Console.Write("Quantos jogos quer fazer: ");
+		do{
+			
+		if (!int.TryParse(Console.ReadLine(), out quantd)){
+			Console.Write("\nErro!\nEscreva um número válido de jogos que deseja fazer: ");
+			
+		}else{
+			erro = true;
+		}
+		}while(!erro);
+		erro = false;
+			Console.Write("\nQuantas casas deseja: ");
+		int casas = 0;
+		do{
+			if (!int.TryParse(Console.ReadLine(), out casas) || casas < 6 || casas > 15 ){
+				Console.Write("\nErro ! Numéro inválido\nDigite um valor maior que 6 ou menor que 15: ");
+				
+			}else{
+			
+		nume = new int[casas];
+				erro = true;
+			}
+			}while(!erro);
+		for ( int a = 0 ; a < quantd ; a ++){
+			string jogo = $"{a + 1}º Jogo: ";
+		for ( int i = 0 ; i < casas ; i ++ ){
+			
+			nume[i] = random.Next(1,60);	
+		}
+			string[] formattedNume = Array.ConvertAll(nume, n => n.ToString("D2"));
+			cadeia = String.Join(" - ", formattedNume);
+			jogo = jogo + cadeia ;
+			todos = todos + jogo + "\n";
+			
+		}
+		
+		Console.Write("\n" + todos);
+		
+			Console.Write("\n");
+			Console.Write("\nAs porcentagens são: ");
+			Console.Write($"\n1º Prêmio: 75 % - 6 dezenas = R${premio*0.75:F2}");
+			Console.Write($"\n2º Prêmio: 15 % - 5 dezenas = R${premio*0.15:F2}");
+			Console.Write($"\n3º Prêmio: 10 % - 4 dezenas = R${premio*0.1:F2}");
+		
+		}
+ 	}

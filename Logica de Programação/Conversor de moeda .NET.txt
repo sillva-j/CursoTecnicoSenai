@@ -1,0 +1,26 @@
+atividade 7 converter moeda
+
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		Double dolar, euro, libra, valor;
+		Console.WriteLine("informe o valor em real:");
+		string texto = Console.ReadLine();
+		if (Double.TryParse(texto, out valor))
+		{
+			dolar = valor / 5.49;
+			euro = valor / 6.10;
+			libra = valor / 7.15;
+			Console.WriteLine($"{valor} covertido para dolar é {dolar}");
+			Console.WriteLine($"{valor} convertido para euro é {euro}");
+			Console.WriteLine($"{valor} convertido para libra é {libra}");
+		}
+		else
+		{
+			Console.WriteLine("Valor Inválido");
+		}
+	}
+}

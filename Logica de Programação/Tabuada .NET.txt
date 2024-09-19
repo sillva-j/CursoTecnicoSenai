@@ -1,0 +1,19 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Qual número deseja saber a tabuada: ");
+		
+		if(int.TryParse(Console.ReadLine(), out int num)){		
+		int i = 1;
+		while(i < 11){
+			Console.Write($"{num} x {i} = {num * i}\n");
+			i++;
+		   }
+	    } else {
+	 	    Console.Write("O valor não válido!");
+	    }
+	}
+}

@@ -1,0 +1,41 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Qual a nota do 1° Bimestre: ");
+		string texto = Console.ReadLine();
+		int media = int.Parse(texto);
+		int nota1 = int.Parse(texto);
+		
+		Console.Write("Qual a nota do 2° Bimestre: ");
+		Console.ReadLine();
+		int nota2 = int.Parse(texto);
+		
+		Console.Write("Qual a nota do 3° Bimestre: ");
+		Console.ReadLine();
+		int nota3 = int.Parse(texto);
+		
+		Console.Write("Qual a nota do 4° Bimestre: ");
+		Console.ReadLine();
+		int nota4 = int.Parse(texto);
+		
+		int med = (nota1 + nota2 + nota3 + nota4 / 4);
+		
+		if ( media >= 60)
+		{
+			Console.Write("APROVADO!!");
+		}
+		else if ( media >= 40 )
+		{
+			Console.Write("RECUPERAÇÃO!!");
+		}
+		else if ( media <= 39 )
+		{
+			Console.Write("REPROVADO!!");
+		}
+						  
+						  
+	}
+}

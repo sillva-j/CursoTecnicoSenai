@@ -1,0 +1,33 @@
+using System;
+
+public class Program
+{
+	public static void Main()
+	{
+		bool x = false;
+		Console.Write("Qual letra deseja: ");
+		string texto = Console.ReadLine();
+		string[] letra =
+		{
+			"a",
+			"e",
+			"i",
+			"o",
+			"u"
+		};
+		foreach (string i in letra)
+		{
+			if (texto == i)
+			{
+				x = true;
+			}
+		}
+
+		if (x == true)
+		{
+			Console.WriteLine("A letra escolhida é uma vogal.");
+		}
+		else
+			Console.WriteLine("A letra escolhida não é uma vogal.");
+	}
+}

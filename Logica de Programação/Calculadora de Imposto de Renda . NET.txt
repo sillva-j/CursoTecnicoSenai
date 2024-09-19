@@ -1,0 +1,38 @@
+	using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Qual o valor do salário bruto: ");
+		string  texto = Console.ReadLine();
+		
+		
+		
+		try
+		{
+			int erro = int.Parse(texto);
+		}
+		
+		catch{
+			Console.Write("O valor digitado não é inteiro!");
+			return ;
+		}
+		
+		int salario = int.Parse(texto);
+		
+			if ( salario <= 3000 )
+		{
+			Console.Write("O valor do Imposto é de R${0}!" , (salario * 0.1));
+		}
+		else if ( salario <= 6000 )
+		{
+		    Console.Write("O valor do Imposto é de R${0}!" , (salario * 0.15));
+		}
+		else if ( salario >= 6000 )
+		{
+			Console.Write("O valor do Imposto é de R${0}!" , (salario * 0.2));
+		}
+	
+	}
+}

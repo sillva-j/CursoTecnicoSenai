@@ -1,0 +1,26 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.WriteLine("Digite a nota do aluno: ");
+		string texto = Console.ReadLine();
+		int nota = int.Parse(texto);
+		
+		if ( nota >= 10 )
+		{
+			Console.WriteLine("Aluno APROVADO com {0} de nota!", nota);
+			
+		}
+		else if ( nota >= 5 )
+		{
+			Console.WriteLine("Aluno de RECUPERAÇÃO com {0} de nota!", nota);
+		}
+		else if ( nota <= 4 )
+		{
+			Console.WriteLine("Aluno REPROVADO com {0} de nota!", nota);
+		}
+		
+	}
+}

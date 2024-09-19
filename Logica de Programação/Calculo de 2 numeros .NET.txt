@@ -1,0 +1,59 @@
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        Console.Write("Qual 1° Número: ");
+        string num1 = Console.ReadLine();
+        Console.Write("Qual 2° Número: ");
+        string num2 = Console.ReadLine();
+
+        
+        if (!double.TryParse(num1, out double num1_1) || !double.TryParse(num2, out double num2_1))
+        {
+            Console.WriteLine("O número digitado não e inteiro!");
+            return;
+        }
+
+        Console.WriteLine("\nQual cálculo deseja: \n1. +\n2. -\n3. *\n4. /");
+        string opera = Console.ReadLine();
+        double resultado;
+
+        switch (opera)
+        {
+            case "+":
+                resultado = num1_1 + num2_1;
+                Console.WriteLine("Sua escolha: +");
+                Console.WriteLine("Cálculo: {0} * {1} = {2}", num1_1, num2_1, resultado);
+                break;
+
+            case "-":
+                resultado = num1_1 - num2_1;
+                Console.WriteLine("Sua escolha: -");
+                Console.WriteLine("Cálculo: {0} * {1} = {2}", num1_1, num2_1, resultado);
+                break;
+
+            case "*":
+                resultado = num1_1 * num2_1;
+                Console.WriteLine("Sua escolha: *");
+                Console.WriteLine("Cálculo: {0} * {1} = {2}", num1_1, num2_1, resultado);
+                break;
+
+            case "/":
+                if (num2_1 == 0)
+                {
+                    Console.WriteLine("Erro: Divisão por zero não é permitida.");
+                    return;
+                }
+                resultado = num1_1 / num2_1;
+                Console.WriteLine("Sua escolha: /");
+                Console.WriteLine("Cálculo: {0} * {1} = {2}", num1_1, num2_1, Math.Round(resultado,2));
+                break;
+
+            default:
+                Console.WriteLine("Operação inválida.");
+                break;
+        }
+    }
+}

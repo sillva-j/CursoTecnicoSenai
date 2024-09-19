@@ -1,0 +1,29 @@
+using System;
+					
+public class Program
+{
+	public static void Main()
+	{
+		Console.Write("Qual a idede do usuário: ");
+		string texto =  Console.ReadLine();
+		int idade = int.Parse(texto);
+		
+		if ( idade <= 12 )
+		{
+			Console.Write("Sua escolha:{0}\nÉ classificado como CRIANÇA !", idade);
+		}
+		else if ( idade <= 17 )
+		{
+			Console.Write("Sua escolha: {0}\nÉ classficado como ADOLESCENTE !",idade);
+		}
+		else if ( idade <= 64 )
+		{
+			Console.Write("Sua escolha: {0}\nÉ classificado como ADULTO !", idade);
+		}
+		else if ( idade >= 65 )
+		{
+			Console.Write("Sua escolha: {0}\nÉ classificado como IDOSO !", idade);
+		}
+			
+	}
+}
